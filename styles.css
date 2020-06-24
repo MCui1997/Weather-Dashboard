@@ -1,0 +1,14 @@
+#status{
+
+    text-align: center;
+    width:100%;
+    border-style: solid;
+    border-color: black;
+}
+
+#forecast{
+
+    text-align: center;
+    width:100%;
+}
+

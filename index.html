@@ -11,6 +11,8 @@
 
 
     <link rel="stylesheet" href="clouds.css" />
+    <link rel="stylesheet" href="styles.css" />
+
     <title>Weather Dashboard</title>
   </head>
 
@@ -38,16 +40,32 @@
     </header>
 
 
-    <div class = "container">
+    <div class = "container" id = "main-container">
         <div class = "row">
             <div class = "col-md-4">
                 <div class="md-form active-cyan active-cyan-2 mb-3">
                     <input class="form-control" type="text" placeholder="Search" aria-label="Search">
                   </div>
-                  
-
             </div>
+
+            <div class = "col-md-8">
+                <div class = "row">
+                    <div class = "container" id = "status">
+
+                        <h1>City</h1>
+                    </div>
+                </div>
+
+                <div class = "row" id = "forecast">
+
+                    <div class = "container">
+                    <h1>5 Day Forecast</h1>
+                    </div>
+                </div>
+            </div>
+                
         </div>
+
     </div>
 
 
