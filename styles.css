@@ -3,8 +3,7 @@
     text-align: center;
     width:100%;
     height: 100%;
-    border-style: solid;
-    border-color: black;
+    
 
     margin-bottom: 5%;
 }
@@ -12,4 +11,38 @@
 .card{
     
     text-align: center;
+}
+
+#search{
+
+    border-style: solid;
+    border-color: black;
+
+    
+    
+}
+
+
+textarea{
+
+    display: block;
+    resize:none;
+    width:90%;
+    height:100%;
+    margin-top: 10%;
+    float:left;
+
+   
+  
+    
+}
+
+button {
+
+
+    display: block;
+    float:left;
+    margin-top:9.8%;
+    width:10%
+ 
 }

@@ -11,11 +11,14 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Roboto&display=swap" rel="stylesheet">
 
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <link rel="stylesheet" href="clouds.css" />
     <link rel="stylesheet" href="styles.css" />
 
     <title>Weather Dashboard</title>
+
+
   </head>
 
   <body>
@@ -28,8 +31,8 @@
             <div class="cloud x2"></div>
 
             <div class = "heading-title">
-                <h1 class = "main-title">Weather Dashboard</h1>
-                <h3 class = "second-title">Don't let weather surprise you on your travels!</h3>
+                <h1 id = "main-title">Weather Dashboard</h1>
+                <h4 id = "second-title">Don't let weather surprise you on your travels!</h3>
             </div>
 
             <div class="cloud x3"></div>
@@ -44,13 +47,22 @@
 
     <div class = "container" id = "main-container">
         <div class = "row">
-            <div class = "col-md-2">
-                <div class="md-form active-cyan active-cyan-2 mb-3">
-                    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+            <div class = "col-md-4" id = "search">
+                <div class="search-container">
+                   
+                      <textarea rows = "1" type="text" placeholder="Search.."></textarea>
+                      <button type="button" id = "searchBtn"><i class="fa fa-search"></i></button>
+                    
                   </div>
+
+                  <br>
+                  <br>
+                  <br>
+                  <br>
+                  <div id = "city"></div>
             </div>
 
-            <div class = "col-md-10">
+            <div class = "col-md-8">
                 <div class = "row">
                     <div class = "container" id = "status">
                         <h1>City</h1>
@@ -125,7 +137,8 @@
  
 
 
-
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src = "logic.js"></script>
 
 
 
