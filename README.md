@@ -1,8 +1,8 @@
 # Weather-Dashboard
 
 
-## Screenshots
-```
+## Links
+
 
 Repo: https://github.com/MCui1997/Weather-Dashboard/
 
