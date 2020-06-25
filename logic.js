@@ -12,6 +12,8 @@ $("#searchBtn").on("click",function(){
     
     //Get text of the textarea
     var city = $("textarea").val();
+    //clear text
+    $("textarea").val("");
 
 
     //Only proceed forward if it is a valid city
