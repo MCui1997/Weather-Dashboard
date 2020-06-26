@@ -75,9 +75,14 @@ margin-top: -280px;
     height: 100%;;
 }
 
+#forecast5{
+
+    text-align: center;
+}
+
 #forecast{
 
-    margin-top: 50px;
+    margin-top: 10px;
     display:flex;
     justify-content: space-evenly;
 }
