@@ -1,9 +1,10 @@
 //Initialize variables
 var cityList = [];
 
+
 //Gets storage if it isn't null
-var test = JSON.parse(localStorage.getItem("cities"));
-if(test != null){
+
+if(localStorage.length!=0){
     getStorage();
 }
 
@@ -12,8 +13,30 @@ $("#searchBtn").on("click",function(){
     
     //Get text of the textarea
     var city = $("textarea").val();
+
     //clear text
     $("textarea").val("");
+
+    //Capitalize 
+    city = city.toUpperCase();
+
+    //If repeat city, alert that already been chosen
+    if(localStorage.length!=0){
+
+        var check = JSON.parse(localStorage.getItem("cities"));
+        var n = check.includes(city);
+      
+        if(n != false){
+
+            var n = "";
+            alert("Repeated City");
+            return;
+        }
+
+
+    }
+
+ 
 
     var url = "https://api.openweathermap.org/data/2.5/weather?q="+city+",us&APPID=d2473db2d15b3f33089244526bb7a7b6";
     
@@ -77,18 +100,33 @@ $("#searchBtn").on("click",function(){
               });
 
 
-                //Capitalize 
-                city = city.toUpperCase();
+                
+
+                if(cityList.length <5){
 
                 //Display to html
                 $("#cityLabel").text(city);
+                
+                var cityBtn =$('<input/>').attr({
+                    type: "button",
+                    value: city,
+                });
 
                 //Append to list
-                $("#city").append(city+ "<br>");
+                $("#city").append(cityBtn);
+                $("#city").append("<br>");
+
                 cityList.push(city);
   
                 //store
                 localStorage.setItem("cities", JSON.stringify(cityList));
+
+
+                }else{
+                    alert("Maximum cities reached");
+                    return;
+                }
+               
 
         } else{
 
@@ -111,7 +149,16 @@ function getStorage(){
 
     for(var i =0; i<test.length; i++){
 
-        $("#city").append(test[i]+ "<br>");
+        var cityBtn =$('<input/>').attr({
+            type: "button",
+            value: test[i],
+        });
+
+        //Append to list
+        $("#city").append(cityBtn);
+        $("#city").append("<br>");
+
+        
         cityList.push(test[i]);
     }
     
