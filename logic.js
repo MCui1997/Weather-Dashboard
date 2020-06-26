@@ -77,7 +77,7 @@ $("#searchBtn").on("click",function(){
                 $("#iconLabel").attr("src","http://openweathermap.org/img/wn/"+icon+".png");
                 
                 //Time for second URL
-                var secondUrl = "https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&exclude={part}&appid=d2473db2d15b3f33089244526bb7a7b6";
+                var secondUrl = "https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&exclude=minutely&appid=d2473db2d15b3f33089244526bb7a7b6";
                 
                
                 
@@ -92,6 +92,36 @@ $("#searchBtn").on("click",function(){
 
                         var uvi = data.current.uvi;
                         $("#uvLabel").text(": "+uvi);
+
+                        var foreCastTemp = [];
+                        var foreCastHumid = [];
+                        var date = [];
+                       
+
+                        for (var i =0; i<6; i++){
+
+                            j = i+1;
+                            date[i] = data.daily[i].dt;
+                            var day = moment.unix(date[i]);
+                            $("#date"+j).text(moment(day).format("MMM DD"));
+                        }
+
+                        for (var i =0; i<5; i++){
+
+                            j = i + 1;
+                            foreCastTemp[i]= data.daily[j].temp.day;
+                            foreCastHumid[i] = data.daily[j].humidity;
+
+                            var tempCelsius = foreCastTemp[i]-273;
+                            var tempFahrenheit = Math.round((tempCelsius * (9/5)) + 32);
+
+                            $("#day"+j).text("Temp: "+tempFahrenheit.toString()+"°F");
+                            $("#humid"+j).text("Humidity: "+foreCastHumid[i].toString()+"%");
+
+
+                        }
+
+                        
                 
                   });
                 

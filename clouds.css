@@ -24,13 +24,14 @@ body {
 .heading-title{
 	
 
-	margin-top: -60px;
+	margin-top: -80px;
 	text-align: center;
 }
 
 #main-title{
 
 	font-family: 'Roboto', sans-serif;
+	font-size: 60px;
 	
 
 }
