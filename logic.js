@@ -15,7 +15,7 @@ $("#searchBtn").on("click",function(){
     //clear text
     $("textarea").val("");
 
-    var url = "http://api.openweathermap.org/data/2.5/weather?q="+city+",us&APPID=d2473db2d15b3f33089244526bb7a7b6";
+    var url = "https://api.openweathermap.org/data/2.5/weather?q="+city+",us&APPID=d2473db2d15b3f33089244526bb7a7b6";
     
     
     //Only proceed forward if it is a valid city
