@@ -71,13 +71,13 @@ textarea{
 
 #main-container{
 
-    margin-top: -280px;
-    height: 150px;
+margin-top: -280px;
+    height: 100%;;
 }
 
 #forecast{
 
-    margin-top: -30px;
+    margin-top: 50px;
     display:flex;
     justify-content: space-evenly;
 }
@@ -98,8 +98,4 @@ textarea{
     
 }
 
-#forecast5{
 
-    margin-top: -70px;
-
-}

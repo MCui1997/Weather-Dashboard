@@ -5,7 +5,10 @@
 *{ margin: 0; padding: 0;}
 html {
     overflow: scroll;
-    overflow-x: hidden;
+	overflow-x: hidden;
+	background: -webkit-linear-gradient(top,  #F8F9F9  0%, white 100%);
+	background: -linear-gradient(top, #F8F9F9 0%, white 100%);
+	background: -moz-linear-gradient(top,#F8F9F9 0%, white 100%);
 }
 ::-webkit-scrollbar {
     width: 0px;  /* Remove scrollbar space */
