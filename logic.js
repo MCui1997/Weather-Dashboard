@@ -81,23 +81,24 @@ $("#searchBtn").on("click",function(){
                 
                
                 
-                //Only proceed if valid city
+                //Second API for 5day Forecast
                 
                     $.ajax({
                         url: secondUrl,
                         method: "GET"
                       }).then(function(data) {
                             
-                        //temp variable
-
+                        //UVI variable
                         var uvi = data.current.uvi;
                         $("#uvLabel").text(": "+uvi);
 
+                        //Initialize new variables needed for the second API
                         var foreCastTemp = [];
                         var foreCastHumid = [];
                         var date = [];
+                        var foreCasticon = [];
                        
-
+                        //Gets the dates and displays them
                         for (var i =0; i<6; i++){
 
                             j = i+1;
@@ -106,20 +107,26 @@ $("#searchBtn").on("click",function(){
                             $("#date"+j).text(moment(day).format("MMM DD"));
                         }
 
+                        //Gets temp and humidity and displays
                         for (var i =0; i<5; i++){
 
                             j = i + 1;
                             foreCastTemp[i]= data.daily[j].temp.day;
                             foreCastHumid[i] = data.daily[j].humidity;
+                            foreCasticon[i] = data.daily[j].weather[0].icon;
+                            
 
                             var tempCelsius = foreCastTemp[i]-273;
                             var tempFahrenheit = Math.round((tempCelsius * (9/5)) + 32);
 
                             $("#day"+j).text("Temp: "+tempFahrenheit.toString()+"°F");
                             $("#humid"+j).text("Humidity: "+foreCastHumid[i].toString()+"%");
+                            $("#icon"+j).attr("src","http://openweathermap.org/img/wn/"+foreCasticon[i]+".png");
 
 
                         }
+
+                        console.log(foreCasticon);
 
                         
                 
