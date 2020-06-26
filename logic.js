@@ -187,8 +187,9 @@ function getStorage(){
 
 
     var test = JSON.parse(localStorage.getItem("cities"));
-
+    var city = test[test.length-1];
     
+    getData(city);
 
     for(var i =0; i<test.length; i++){
 
@@ -221,8 +222,21 @@ function getStorage(){
     $(document).on("click","#histBtn", function(){
 
         var city = this.value;
-        $("#cityLabel").text(city);
+        
+        getData(city);
+    });
 
+
+
+
+
+
+
+function getData(city){
+
+        
+    $("#cityLabel").text(city);
+    
         var url = "https://api.openweathermap.org/data/2.5/weather?q="+city+",us&APPID=d2473db2d15b3f33089244526bb7a7b6";
     
     
@@ -325,4 +339,6 @@ function getStorage(){
 
         });
 
-    });
+    }
+
+    
