@@ -48,9 +48,9 @@ $("#searchBtn").on("click",function(){
                 var tempFahrenheit = (tempCelsius * (9/5)) + 32;
                 
                 //Display values
-                $("#tempLabel").text(Math.round(tempFahrenheit)+"°F");
-                $("#humidLabel").text(humidity+"%");
-                $("#windLabel").text(Math.round(wind)+"MPH");
+                $("#tempLabel").text(": "+Math.round(tempFahrenheit)+"°F");
+                $("#humidLabel").text(": "+humidity+"%");
+                $("#windLabel").text(": "+Math.round(wind)+"MPH");
                 $("#iconLabel").attr("src","http://openweathermap.org/img/wn/"+icon+".png");
                 
                 //Time for second URL
@@ -68,7 +68,7 @@ $("#searchBtn").on("click",function(){
                         //temp variable
 
                         var uvi = data.current.uvi;
-                        $("#uvLabel").text(uvi);
+                        $("#uvLabel").text(": "+uvi);
                 
                   });
                 

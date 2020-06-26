@@ -23,26 +23,22 @@
 
   <body>
 
-    <header>
+   
         
         <div id="clouds">
             
-            <div class="cloud x1"></div>
-            <div class="cloud x2"></div>
-
             <div class = "heading-title">
                 <h1 id = "main-title">Weather Dashboard</h1>
                 <h4 id = "second-title">Don't let weather surprise you on your travels!</h3>
             </div>
 
+            <div class="cloud x1"></div>
+            <div class="cloud x2"></div>
             <div class="cloud x3"></div>
             <div class="cloud x4"></div>
             <div class="cloud x5"></div>
 
-            
-        </div>
-   
-    </header>
+    
 
 
     <div class = "container" id = "main-container">
@@ -62,23 +58,27 @@
                   <div id = "city"></div>
             </div>
 
+            
             <div class = "col-md-8">
                 <div class = "row">
                     <div class = "container" id = "status">
+
+                        <div class = "wrapperCity">
                         <h1 id = "cityLabel">City</h1>
                         <img src = "" id = "iconLabel"></img>
-                        <br>
-                        <p>Temperature</p>
-                        <h2 id = "tempLabel"></h2>
-                        <br>
-                        <p>Humidity</p>
-                        <h2 id = "humidLabel"></h2>
-                        <br>
-                        <p>Wind Speed:</p>
-                        <h2 id = "windLabel"></h2>
-                        <br>
-                        <p>UV Index</p>
-                        <h2 id = "uvLabel"></h2>
+                    </div>
+                        
+                        <p>Temperature<span id = "tempLabel"></span></p>
+                        
+                        
+                        <p>Humidity<span id = "humidLabel"></span></p>
+                        
+                       
+                        <p>Wind Speed<span id = 'windLabel'></span></p>
+                       
+                    
+                        <p>UV Index<span id ="uvLabel"></span></p>
+                      
                     </div>
                 </div>
 
@@ -138,7 +138,13 @@
 
     </div>
 
+            <div class="cloud x3"></div>
+            <div class="cloud x4"></div>
+            <div class="cloud x5"></div>
+            <div class="cloud x1"></div>
+            <div class="cloud x2"></div>
 
+</div>
  
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

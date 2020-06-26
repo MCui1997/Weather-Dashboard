@@ -3,16 +3,28 @@
 /*The container will also serve as the SKY*/
 
 *{ margin: 0; padding: 0;}
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
 
 body {
 	/*To hide the horizontal scroller appearing during the animation*/
-	overflow-x: hidden;
+
 	background: -webkit-linear-gradient(top,  #F8F9F9  0%, white 100%);
 	background: -linear-gradient(top, #F8F9F9 0%, white 100%);
 	background: -moz-linear-gradient(top,#F8F9F9 0%, white 100%);
 }
 
 .heading-title{
+	
+
+	margin-top: -60px;
 	text-align: center;
 }
 
