@@ -8,11 +8,19 @@ if(localStorage.length!=0){
     getStorage();
 }
 
+//if enter key is pressed
+$('textarea').keypress(function(event){
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if(keycode == '13'){
+        
+        $("#searchBtn").click();
+    }
+});
+
+
 //Search button is pressed
 $("#searchBtn").on("click",function(){
     
-    console.log("few");
- 
 
     //Get text of the textarea
     city = $("textarea").val();
@@ -173,8 +181,8 @@ $("#searchBtn").on("click",function(){
                 
 
                 //Append to list
-                $("#city").append(cityBtn);
-                $("#city").append("<br>");
+                $("#city").prepend(cityBtn);
+                $("#city").prepend("<br>");
 
                 cityList.push(city);
   
@@ -214,8 +222,8 @@ function getStorage(){
         });
 
         //Append to list
-        $("#city").append(cityBtn);
-        $("#city").append("<br>");
+        $("#city").prepend(cityBtn);
+        $("#city").prepend("<br>");
 
         
         cityList.push(test[i]);
