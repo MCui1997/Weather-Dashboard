@@ -75,9 +75,9 @@ $("#searchBtn").on("click",function(){
                 var tempFahrenheit = (tempCelsius * (9/5)) + 32;
                 
                 //Display values
-                $("#tempLabel").text(": "+Math.round(tempFahrenheit)+"°F");
-                $("#humidLabel").text(": "+humidity+"%");
-                $("#windLabel").text(": "+Math.round(wind)+"MPH");
+                $("#tempLabel").text(" "+Math.round(tempFahrenheit)+"°F");
+                $("#humidLabel").text(" "+humidity+"%");
+                $("#windLabel").text(" "+Math.round(wind)+"MPH");
                 $("#iconLabel").attr("src","http://openweathermap.org/img/wn/"+icon+".png");
                 
                 //Time for second URL
@@ -94,7 +94,21 @@ $("#searchBtn").on("click",function(){
                             
                         //UVI variable
                         var uvi = data.current.uvi;
-                        $("#uvLabel").text(": "+uvi);
+
+                        if(uvi <=3){
+                            $("#uvLabel").css("background-color","green");
+                        }
+                        if(uvi >3 && uvi <6){
+                            $("#uvLabel").css("background-color","yellow");
+                        }
+                        if(uvi >= 6 && uvi <9){
+                            $("#uvLabel").css("background-color","red");
+                        }
+                        if(uvi >=9){
+                            $("#uvLabel").css("background-color","purple");
+                        }
+
+                        $("#uvLabel").text(uvi);
 
                         //Initialize new variables needed for the second API
                         var foreCastTemp = [];
@@ -123,8 +137,8 @@ $("#searchBtn").on("click",function(){
                             var tempCelsius = foreCastTemp[i]-273;
                             var tempFahrenheit = Math.round((tempCelsius * (9/5)) + 32);
 
-                            $("#day"+j).text("Temp: "+tempFahrenheit.toString()+"°F");
-                            $("#humid"+j).text("Humidity: "+foreCastHumid[i].toString()+"%");
+                            $("#day"+j).text("Temp "+tempFahrenheit.toString()+"°F");
+                            $("#humid"+j).text("Humidity "+foreCastHumid[i].toString()+"%");
                             $("#icon"+j).attr("src","http://openweathermap.org/img/wn/"+foreCasticon[i]+".png");
 
 
@@ -270,9 +284,9 @@ function getData(city){
                 var tempFahrenheit = (tempCelsius * (9/5)) + 32;
                 
                 //Display values
-                $("#tempLabel").text(": "+Math.round(tempFahrenheit)+"°F");
-                $("#humidLabel").text(": "+humidity+"%");
-                $("#windLabel").text(": "+Math.round(wind)+"MPH");
+                $("#tempLabel").text(" "+Math.round(tempFahrenheit)+"°F");
+                $("#humidLabel").text(" "+humidity+"%");
+                $("#windLabel").text(" "+Math.round(wind)+"MPH");
                 $("#iconLabel").attr("src","http://openweathermap.org/img/wn/"+icon+".png");
                 
                 //Time for second URL
@@ -289,7 +303,20 @@ function getData(city){
                             
                         //UVI variable
                         var uvi = data.current.uvi;
-                        $("#uvLabel").text(": "+uvi);
+                        if(uvi <=3){
+                            $("#uvLabel").css("background-color","green");
+                        }
+                        if(uvi >3 && uvi <6){
+                            $("#uvLabel").css("background-color","yellow");
+                        }
+                        if(uvi >= 6 && uvi <9){
+                            $("#uvLabel").css("background-color","red");
+                        }
+                        if(uvi >=9){
+                            $("#uvLabel").css("background-color","purple");
+                        }
+
+                        $("#uvLabel").text(uvi);
 
                         //Initialize new variables needed for the second API
                         var foreCastTemp = [];
