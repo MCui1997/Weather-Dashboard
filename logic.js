@@ -1,6 +1,7 @@
 //Initialize variables
 var cityList = [];
-
+localStorage.clear();
+window.localStorage.removeItem("cities");
 
 //if enter key is pressed
 $('textarea').keypress(function(event){
@@ -27,7 +28,7 @@ $("#searchBtn").on("click",function(){
     city = city.toUpperCase();
 
     //If repeat city, alert that already been chosen
-    if(localStorage != "undefined " && localStorage != null && localStorage.length != 0){
+    if(localStorage.length != 0){
 
         var check = JSON.parse(localStorage.getItem("cities"));
         var n = check.includes(city);
@@ -198,34 +199,7 @@ $("#searchBtn").on("click",function(){
 
 });
 
-//Get stored Cities
-function getStorage(){
 
-    
-
-    var test = JSON.parse(localStorage.getItem("cities"));
-
-    var city = test[test.length-1];
-    
-    getData(city);
-
-    for(var i =0; i<test.length; i++){
-
-        var cityBtn =$('<input/>').attr({
-            type: "button",
-            value: test[i],
-            id: "histBtn",
-        });
-
-        //Append to list
-        $("#city").prepend(cityBtn);
-        $("#city").prepend("<br>");
-
-        
-        cityList.push(test[i]);
-    }
-    
-}
 
 //Clear city history
     $("#clear").on("click",function(){
