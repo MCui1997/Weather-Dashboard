@@ -208,6 +208,9 @@ $("#searchBtn").on("click",function(){
 function getStorage(){
 
 
+    if(typeof(localStorage) != "undefined" && localStorage != null && localStorage.length != 0){
+        
+    
 
     var test = JSON.parse(localStorage.getItem("cities"));
 
@@ -230,6 +233,7 @@ function getStorage(){
         
         cityList.push(test[i]);
     }
+}
     
 }
 
