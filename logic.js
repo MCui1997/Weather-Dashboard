@@ -4,7 +4,7 @@ var cityList = [];
 
 //Gets storage if it isn't null
 
-if(typeof(localStorage) != "undefined" && localStorage != null){
+if(typeof(localStorage) != "undefined" && localStorage != null && localStorage.length != 0){
     getStorage();
 }
 
@@ -33,7 +33,7 @@ $("#searchBtn").on("click",function(){
     city = city.toUpperCase();
 
     //If repeat city, alert that already been chosen
-    if(localStorage != "undefined " && localStorage != null){
+    if(localStorage != "undefined " && localStorage != null && localStorage.length != 0){
 
         var check = JSON.parse(localStorage.getItem("cities"));
         var n = check.includes(city);
@@ -208,7 +208,9 @@ $("#searchBtn").on("click",function(){
 function getStorage(){
 
 
+
     var test = JSON.parse(localStorage.getItem("cities"));
+
     var city = test[test.length-1];
     
     getData(city);
