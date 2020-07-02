@@ -1,15 +1,6 @@
 //Initialize variables
 var cityList = [];
 
-console.log(localStorage);
-console.log(localStorage.length);
-console.log(typeof(localStorage));
-//Gets storage if it isn't null
-
-if(typeof(localStorage) != "undefined" && localStorage != null && localStorage.length != 0){
-    getStorage();
-   
-}
 
 //if enter key is pressed
 $('textarea').keypress(function(event){
