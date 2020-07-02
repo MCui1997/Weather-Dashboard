@@ -1,11 +1,14 @@
 //Initialize variables
 var cityList = [];
 
-
+console.log(localStorage);
+console.log(localStorage.length);
+console.log(typeof(localStorage));
 //Gets storage if it isn't null
 
 if(typeof(localStorage) != "undefined" && localStorage != null && localStorage.length != 0){
     getStorage();
+   
 }
 
 //if enter key is pressed
@@ -207,9 +210,6 @@ $("#searchBtn").on("click",function(){
 //Get stored Cities
 function getStorage(){
 
-
-    if(typeof(localStorage) != "undefined" && localStorage != null && localStorage.length != 0){
-        
     
 
     var test = JSON.parse(localStorage.getItem("cities"));
@@ -233,7 +233,6 @@ function getStorage(){
         
         cityList.push(test[i]);
     }
-}
     
 }
 
