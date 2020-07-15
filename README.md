@@ -5,9 +5,9 @@ Beautiful weather dashboard that utilizes the [OpenWeather API](https://openweat
 ## Links	
 
 
-Repo: https://github.com/MCui1997/Weather-Dashboard/
+[Repo](https://github.com/MCui1997/Weather-Dashboard/)
 
-Github: https://mcui1997.github.io/Weather-Dashboard/
+[Github](https://mcui1997.github.io/Weather-Dashboard/)
 
 
 
